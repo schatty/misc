@@ -99,4 +99,5 @@ After previous steps your can pushing and pulling from your github repo without 
 * To show your history on a server either do `history` command or open
 `vim ~/.bash_history`
 * To show your graphic cards `lspci | grep VGA`
-* To show your external private IP `hostname -I`
+* To show your local dynamic IP `hostname -I`
+* To show your external IP `curl https://ipecho.net/plain`
