@@ -83,6 +83,13 @@ this website
 
 After previous steps your can pushing and pulling from your github repo without need of specifying login and password every time
 
+### Fixing `Warning: the ECDSA host key for...` warning
+* `ssh-keygen -R 192.168.1.123`
+
+### Adding new user
+* `sudo adduser newuser` - to create new user
+* `sudo usermod -aG sudo newuser` - to give sudo priveleges
+
 ### Coding
 
   * install vim
