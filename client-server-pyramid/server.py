@@ -17,7 +17,7 @@ def post_b_request(request):
 
 
 if __name__ == "__main__":
-    host = 'localhost'
+    host = '0.0.0.0'
     port = 18000
 
     with Configurator() as config:
@@ -30,5 +30,6 @@ if __name__ == "__main__":
         app = config.make_wsgi_app()
 
 
+    print("Starting server...")
     server = make_server(host, port, app)
     server.serve_forever()
