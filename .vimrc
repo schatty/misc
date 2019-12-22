@@ -1,59 +1,28 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Coloscheme like in Atom
-Plugin 'https://github.com/rakr/vim-one.git'
-
-" File explorer
-Plugin 'scrooloose/nerdtree'
-
-" Autocompletion
-Plugin 'https://github.com/ycm-core/YouCompleteMe.git'
-
-" Syntax checker
-Plugin 'https://github.com/vim-syntastic/syntastic.git'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
+" Enable line number
 set number
-set tabstop=4
 
-colorscheme one " Like in Atom One theme
-set background=light 
-set t_Co=256 " This line is needed to working inside tmux 
+" Enable backspace for MacOS
+set backspace=indent,eol,start
 
+" Open NERD atumatically
 autocmd vimenter * NERDTree
 
-"Close NERDTree if it is the last open buffer
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+" To toggle NERD tree
+nmap <F6> :NERDTreeToggle<CR>
 
-"" Close all open buffers on entering a window if the only
-" buffer that's left is the NERDTree buffer
-function! s:CloseIfOnlyNerdTreeLeft()
-   if exists("t:NERDTreeBufName")
-       if bufwinnr(t:NERDTreeBufName) != -1
-             if winnr("$") == 1
-                     q
-                           endif
-                               endif
-                                 endif
-                                 endfunction
+" To switch to the editor on the start
+autocmd VimEnter * NERDTree | wincmd p
 
-" Focus on the opended file instead of NERDTree
-autocmd VimEnter * wincmd p
+" Close NERD automatically if it is the only buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Syntax checker options
+" To enable synax highlight
+filetype plugin on
+syntax on
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -63,3 +32,26 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" set the runtime path to include Vundle and initialize
+let g:python_highlight_all = 1
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-python/python-syntax'
+Plugin 'https://github.com/joshdick/onedark.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'https://github.com/ycm-core/YouCompleteMe'
+Plugin 'https://github.com/vim-syntastic/syntastic.git'
+Plugin 'https://tpope.io/vim/fugitive.git'
+Plugin 'airblade/vim-gitgutter'
+
+" All of your Plugins must be added before the following line
+"
+call vundle#end()
+filetype plugin indent on    " required
+
+
+" Color theme
+colorscheme onedark
