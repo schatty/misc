@@ -19,6 +19,9 @@ autocmd VimEnter * NERDTree | wincmd p
 " Close NERD automatically if it is the only buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Open NERD tree in every tab
+autocmd BufWinEnter * NERDTreeMirror
+
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
