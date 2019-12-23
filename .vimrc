@@ -19,6 +19,14 @@ autocmd VimEnter * NERDTree | wincmd p
 " Close NERD automatically if it is the only buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
 " To enable synax highlight
 filetype plugin on
 syntax on
