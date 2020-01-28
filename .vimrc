@@ -34,6 +34,10 @@ set expandtab
 filetype plugin on
 syntax on
 
+" To use mouse in NERDTree
+set mouse=a
+let g:NERDTreeMouseMode=3 
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
