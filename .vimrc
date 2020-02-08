@@ -8,19 +8,21 @@ set number
 set backspace=indent,eol,start
 
 " Open NERD atumatically
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 
 " To toggle NERD tree
-nmap <F6> :NERDTreeToggle<CR>
+nmap <C-n> :NERDTreeToggle<CR>
 
 " To switch to the editor on the start
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 
 " Close NERD automatically if it is the only buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Open NERD tree in every tab
-autocmd BufWinEnter * NERDTreeMirror
+" autocmd BufWinEnter * NERDTreeMirror
+
+set pastetoggle=<F2>
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
