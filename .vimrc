@@ -54,12 +54,13 @@ let g:python_highlight_all = 1
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+let g:jedi#force_py_version = 3
+
 Plugin 'scrooloose/nerdtree'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-python/python-syntax'
 Plugin 'https://github.com/joshdick/onedark.vim'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'https://github.com/ycm-core/YouCompleteMe'
 Plugin 'https://github.com/vim-syntastic/syntastic.git'
 Plugin 'https://tpope.io/vim/fugitive.git'
 Plugin 'airblade/vim-gitgutter'
