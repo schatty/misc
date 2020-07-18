@@ -59,7 +59,7 @@ let g:jedi#force_py_version = 3
 Plugin 'scrooloose/nerdtree'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-python/python-syntax'
-Plugin 'https://github.com/joshdick/onedark.vim'
+Plugin 'doums/darcula'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'https://github.com/vim-syntastic/syntastic.git'
 Plugin 'https://tpope.io/vim/fugitive.git'
@@ -72,4 +72,4 @@ filetype plugin indent on    " required
 
 
 " Color theme
-colorscheme onedark
+colorscheme darcula
